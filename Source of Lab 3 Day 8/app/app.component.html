@@ -1,0 +1,5 @@
+<app-heading></app-heading>
+<body>
+  <app-table-create (tableCreated)='onTableAdded($event)'></app-table-create>
+  <app-table-list [table]="storedTable"></app-table-list>
+</body>
