@@ -1,0 +1,22 @@
+<form [formGroup] = "logInForm" (ngsubmit)="onSubmit()">
+   <table class="example-full-width" colspacing="0">
+    <tr>
+       <td> UserName<br>
+        <input placeholder="Username" formControlName="mail" required><br>
+        <br>
+        <div *ngIf="logInForm.controls.mail.errors?.required">Email Is Required</div>
+
+      </td>
+
+       <td>
+         Password<br>
+        <input text ="password" placeholder="Password" formControlName="password"required><br>
+        <br>
+         <div *ngIf="logInForm.controls.password.errors?.required">Password Is required </div>
+        </td>
+    </tr>
+    <button type="submit" (click)="onSubmit()">Login</button>
+    <div *ngIf="InvalidLogin"> <a href="google.com">register</a> </div>
+</table>
+</form>
+

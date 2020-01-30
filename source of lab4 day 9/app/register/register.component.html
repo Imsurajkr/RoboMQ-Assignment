@@ -1,0 +1,21 @@
+<form [formGroup]="RegiterForm" (ngsubmit)="onSubmit() ">
+Id<input type="text" placeholder="Id">
+
+Name<input type="text" placeholder="name">
+<p *ngIf="RegiterForm.controls.name.errors?.required">Name is required</p>
+<p *ngIf="RegiterForm.controls.name.errors?.pattern">Enter a valid name</p>
+E-mail<input type="text" placeholder="Email">
+<p *ngIf="RegiterForm.controls.email.errors?.required">Email is required</p>
+<p *ngIf="RegiterForm.controls.email.errors?.pattern">Enter a valid email</p>
+
+Mobile Number<input type="text" placeholder="number">
+<p *ngIf="RegiterForm.controls.mobile.errors?.required">Mobile no is required</p>
+<p *ngIf="RegiterForm.controls.mobile.errors?.maxlength">Maximum length should be 10</p>
+
+password<input type="password" placeholder="Adddress">
+<p *ngIf="RegiterForm.controls.password.errors?.required">Password required</p>
+<p *ngIf="RegiterForm.controls.password.errors?.pattern">Password is weak</p>
+
+<button type="submit" (click)="onSubmit()"> Submit</button>
+ </form>
+
